@@ -1,0 +1,20 @@
+Thread unsafe
+FF
+
+(base) ➜  alloc_policy_tests git:(main) ✗ ./equal_size_allocs 
+Execution Time = 6.170329 seconds
+Fragmentation  = 0.999889
+
+(base) ➜  alloc_policy_tests git:(main) ✗ ./small_range_rand_allocs
+start time
+end time
+data_segment_size = 82144, data_segment_free_space = 216624
+Execution Time = 9.955660 seconds
+Fragmentation  = 0.620799
+
+(base) ➜  alloc_policy_tests git:(main) ✗ ./large_range_rand_allocs 
+Execution Time = 28.279749 seconds
+Fragmentation  = 0.830563
+
+BF
+
