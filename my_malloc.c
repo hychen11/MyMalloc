@@ -116,12 +116,13 @@ void addIntoLinkedList(Node *node)
     {
         Node *cur = freeHead;
         while (cur)
-        {   
-            if(cur>node){
+        {
+            if (cur > node)
+            {
                 node->next = cur;
                 node->prev = cur->prev;
-                cur->prev->next=node;
-                cur->prev=node;
+                cur->prev->next = node;
+                cur->prev = node;
                 return;
             }
             cur = cur->next;
@@ -193,14 +194,15 @@ void *getFirstFitAddr(Node *node, size_t size)
 void *getBestFitAddr(Node *node, size_t size)
 {
     Node *res = NULL;
-    size_t tmp = -1;
     while (node)
     {
-        if (node->size >= size)
+        if(node->size == size){
+            return node;
+        }
+        if (node->size > size)
         {
-            if (tmp > node->size)
+            if (res==NULL||res->size > node->size)
             {
-                tmp = node->size;
                 res = node;
             }
         }

@@ -3,6 +3,7 @@
 #define MY_MALLOC_H
 
 #include <stdio.h>
+#include <pthread.h>
 
 typedef struct _Node
 {
