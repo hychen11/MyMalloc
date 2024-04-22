@@ -1,0 +1,23 @@
+(base) ➜  thread_tests git:(main) ✗ sh test.sh 
+Making
+rm -f *~ *.o thread_test thread_test_malloc_free thread_test_malloc_free_change_thread thread_test_measurement
+gcc -O3 -I../ -DLOCK_VERSION -L../ -Wl,-rpath=../ -o thread_test thread_test.c -lmymalloc -lrt -lpthread
+gcc -O3 -I../ -DLOCK_VERSION -L../ -Wl,-rpath=../ -o thread_test_malloc_free thread_test_malloc_free.c -lmymalloc -lrt -lpthread
+gcc -O3 -I../ -DLOCK_VERSION -L../ -Wl,-rpath=../ -o thread_test_malloc_free_change_thread thread_test_malloc_free_change_thread.c -lmymalloc -lrt -lpthread
+gcc -O3 -I../ -DLOCK_VERSION -L../ -Wl,-rpath=../ -o thread_test_measurement thread_test_measurement.c -lmymalloc -lrt -lpthread
+Testing {1..200} thread_test
+No overlapping allocated regions found!
+Test passed
+Testing {1..200} thread_test_malloc_free
+No overlapping allocated regions found!
+Test passed
+Testing {1..200} thread_test_malloc_free_change_thread
+No overlapping allocated regions found!
+Test passed
+Testing {1..200} thread_test_measurement
+No overlapping allocated regions found!
+Test passed
+Execution Time = 0.044052 seconds
+Data Segment Size = 48089536 bytes
+Cleaning
+rm -f *~ *.o thread_test thread_test_malloc_free thread_test_malloc_free_change_thread thread_test_measurement

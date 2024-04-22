@@ -5,6 +5,11 @@
         "array": "c",
         "string_view": "c",
         "initializer_list": "c",
-        "utility": "c"
+        "utility": "c",
+        "my_malloc.h": "c",
+        "compare": "c",
+        "functional": "c",
+        "tuple": "c",
+        "type_traits": "c"
     }
 }
